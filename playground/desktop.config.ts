@@ -3,7 +3,7 @@ import { defineDesktopConfig } from '@owdproject/core'
 export default defineDesktopConfig({
   theme: '@owdproject/theme-nova',
   apps: ['@owdproject/app-classic-audioplayer'],
-  modules: ['@owdproject/module-fs', '@owdproject/module-persistence'],
+  modules: ['@owdproject/module-fs', '@owdproject/nuxt-persistence-pinia'],
   systemBar: { enabled: true, startButton: true },
   about: {
     title: 'Audio Player (playground)',

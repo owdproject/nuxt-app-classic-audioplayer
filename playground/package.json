@@ -8,11 +8,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@owdproject/core": "workspace:*",
+    "@owdproject/core": "^4.0.0-alpha.3",
     "@owdproject/app-classic-audioplayer": "workspace:*",
     "nuxt": "^4.4.6",
-    "@owdproject/module-fs": "workspace:*",
-    "@owdproject/nuxt-persistence-pinia": "workspace:*",
-    "@owdproject/theme-nova": "workspace:*"
+    "@owdproject/module-fs": "^4.0.0-alpha.3",
+    "@owdproject/nuxt-persistence-pinia": "^4.0.0-alpha.3",
+    "@owdproject/theme-nova": "^4.0.0-alpha.3"
   }
 }

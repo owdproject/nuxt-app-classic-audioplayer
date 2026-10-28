@@ -1,6 +1,6 @@
 {
   "name": "@owdproject/app-classic-audioplayer",
-  "version": "0.0.4",
+  "version": "4.0.0-alpha.3",
   "description": "Audio Player for your Open Web Desktop client",
   "keywords": [
     "owd-client",
@@ -43,21 +43,26 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.4.6",
-    "@owdproject/kit-tailwind": "workspace:*",
+    "@owdproject/kit-tailwind": "^4.0.0-alpha.3",
     "@owdproject/nuxt": "^4.0.0-alpha.3"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.6",
-    "@owdproject/core": "workspace:*",
-    "@owdproject/theme-nova": "workspace:*",
+    "@owdproject/core": "^4.0.0-alpha.3",
+    "@owdproject/theme-nova": "^4.0.0-alpha.3",
     "nuxt": "^4.4.6",
     "typescript": "~6.0.3",
-    "@owdproject/module-fs": "workspace:*",
-    "@owdproject/nuxt-persistence-pinia": "workspace:*"
+    "@owdproject/module-fs": "^4.0.0-alpha.3",
+    "@owdproject/nuxt-persistence-pinia": "^4.0.0-alpha.3"
   },
   "peerDependencies": {
-    "@owdproject/core": ">=4.0.0-alpha.0",
+    "@owdproject/core": "^4.0.0-alpha.3",
     "@owdproject/nuxt": "^4.0.0-alpha.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha",
+    "registry": "https://registry.npmjs.org/"
   }
 }

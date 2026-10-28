@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs'
 import {
   defineNuxtModule,
   createResolver,
@@ -23,7 +24,8 @@ export default defineNuxtModule({
 
     addPlugin(resolve('./runtime/plugin'))
 
-    nuxt.options.css.push(resolve('./runtime/assets/styles/classic-audioplayer.scss'))
+    const css = resolve('./runtime/assets/styles/classic-audioplayer.css')
+    nuxt.options.css.push(existsSync(css) ? css : resolve('./runtime/assets/styles/classic-audioplayer.scss'))
 
     // configure tailwind
 

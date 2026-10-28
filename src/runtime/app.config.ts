@@ -39,7 +39,7 @@ export default {
     },
   },
   commands: {
-    'classic-audioplayer': (app: IApplicationController, args: any) => {
+    'classic-audioplayer': (app: any, args: any) => {
       const path = args._[1]
       const meta = {
         path,

@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.4.6",
-    "@owdproject/kit-tailwind": "workspace:*"
+    "@owdproject/kit-tailwind": "workspace:*",
+    "nuxt-desktop": "workspace:*"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^1.0.2",
@@ -56,6 +57,7 @@
     "@owdproject/module-persistence": "workspace:*"
   },
   "peerDependencies": {
-    "@owdproject/core": "^3.4.0"
+    "@owdproject/core": ">=4.0.0-alpha.0",
+    "nuxt-desktop": ">=1.0.0"
   }
 }

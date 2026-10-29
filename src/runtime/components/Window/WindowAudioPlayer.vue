@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { fs } from '@zenfs/core'
-import { getFilename } from '@owdproject/module-fs/runtime/utils/utilFileSystem'
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 const props = defineProps<{
@@ -11,9 +9,19 @@ const audioRef = ref<HTMLAudioElement | null>(null)
 const audioSrc = ref<string | undefined>()
 let objectUrl: string | undefined
 
-const trackPath = computed(() => props.window.meta?.path as string | undefined)
+const trackPath = computed(() => (props.window.meta?.path || props.window.meta?.url) as string | undefined)
 
-const title = computed(() => getFilename(trackPath.value ?? ''))
+function extractFilename(path?: string): string {
+  if (!path) return ''
+  try {
+    const url = new URL(path)
+    return url.pathname.split('/').filter(Boolean).pop() || path
+  } catch {
+    return path.split('/').filter(Boolean).pop() || path
+  }
+}
+
+const title = computed(() => (props.window.meta?.title as string | undefined) || extractFilename(trackPath.value))
 
 function revokeObjectUrl() {
   if (objectUrl) {
@@ -29,42 +37,12 @@ function loadAudioUrl(pathString?: string): string | undefined {
     return undefined
   }
 
-  if (/^https?:\/\//i.test(pathString)) {
-    return pathString
-  }
-
-  try {
-    const buffer = fs.readFileSync(pathString)
-    const lastDotIndex = pathString.lastIndexOf('.')
-    const lastSlashIndex = pathString.lastIndexOf('/')
-
-    let ext = ''
-
-    if (lastDotIndex > lastSlashIndex) {
-      ext = pathString.substring(lastDotIndex).toLowerCase()
-    }
-
-    let mimeType: string | undefined
-
-    switch (ext) {
-      case '.mp3':
-        mimeType = 'audio/mpeg'
-        break
-      case '.wav':
-        mimeType = 'audio/wav'
-        break
-      default:
-        console.warn(`File is not supported: ${ext}`)
-        return undefined
-    }
-
-    const blob = new Blob([buffer], { type: mimeType })
-    objectUrl = URL.createObjectURL(blob)
+  if (props.window.meta?.blob instanceof Blob) {
+    objectUrl = URL.createObjectURL(props.window.meta.blob)
     return objectUrl
-  } catch (err) {
-    console.error('Error while loading the audio', err)
-    return undefined
   }
+
+  return pathString
 }
 
 async function applyTrack() {

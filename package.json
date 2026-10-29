@@ -53,7 +53,6 @@
     "@owdproject/theme-nova": "^4.0.0-alpha.3",
     "nuxt": "^4.4.6",
     "typescript": "~6.0.3",
-    "@owdproject/module-fs": "^4.0.0-alpha.3",
     "@owdproject/nuxt-persistence-pinia": "^4.0.0-alpha.3"
   },
   "peerDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "@owdproject/app-classic-audioplayer",
+  "name": "@owdproject/app-nuxt-classic-audioplayer",
   "version": "4.0.0-alpha.3",
   "description": "Audio Player for your Open Web Desktop client",
   "keywords": [
@@ -43,17 +43,17 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.4.6",
-    "@owdproject/kit-tailwind": "^4.0.0-alpha.3",
+    "@owdproject/kit-nuxt-tailwind": "^4.0.0-alpha.3",
     "@owdproject/nuxt": "^4.0.0-alpha.3"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.6",
     "@owdproject/core": "^4.0.0-alpha.3",
-    "@owdproject/theme-nova": "^4.0.0-alpha.3",
+    "@owdproject/theme-nuxt-nova": "^4.0.0-alpha.3",
     "nuxt": "^4.4.6",
     "typescript": "~6.0.3",
-    "@owdproject/nuxt-persistence-pinia": "^4.0.0-alpha.3"
+    "@owdproject/module-nuxt-pinia-persistence": "^4.0.0-alpha.3"
   },
   "peerDependencies": {
     "@owdproject/core": "^4.0.0-alpha.3",

@@ -44,7 +44,7 @@ jobs:
       - name: Checkout theme-nova
         uses: actions/checkout@v4
         with:
-          repository: owdproject/owd-nuxt-theme-nova
+          repository: owdproject/nuxt-theme-nova
           path: client/themes/owd-nuxt-theme-nova
 
       - name: Overlay this app-classic-audioplayer repo

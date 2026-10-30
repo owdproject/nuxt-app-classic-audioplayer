@@ -14,7 +14,7 @@ This app for Open Web Desktop provides a basic audio player for the File System 
 
 ## Playground
 
-Requires **`@owdproject/nuxt-module-fs`** (and **`@owdproject/module-persistence`**) so VFS file associations work (`mp3` → `audio-player` via `openVfsFile`):
+Requires **`@owdproject/nuxt-module-fs`** (and **`@owdproject/nuxt-module-pinia-persistence`**) so VFS file associations work (`mp3` → `audio-player` via `openVfsFile`):
 
 ```bash
 pnpm install

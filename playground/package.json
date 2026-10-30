@@ -1,5 +1,5 @@
 {
-  "name": "@owdproject/app-nuxt-classic-audioplayer-playground",
+  "name": "@owdproject/nuxt-app-classic-audioplayer-playground",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "@owdproject/core": "^4.0.0-alpha.3",
-    "@owdproject/app-nuxt-classic-audioplayer": "workspace:*",
+    "@owdproject/nuxt-app-classic-audioplayer": "workspace:*",
     "nuxt": "^4.4.6",
-    "@owdproject/module-nuxt-fs": "^4.0.0-alpha.3",
-    "@owdproject/module-nuxt-pinia-persistence": "^4.0.0-alpha.3",
-    "@owdproject/theme-nuxt-nova": "^4.0.0-alpha.3"
+    "@owdproject/nuxt-module-fs": "^4.0.0-alpha.3",
+    "@owdproject/nuxt-module-pinia-persistence": "^4.0.0-alpha.3",
+    "@owdproject/nuxt-theme-nova": "^4.0.0-alpha.3"
   }
 }

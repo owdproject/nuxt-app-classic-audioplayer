@@ -1,14 +1,14 @@
 import { defineDesktopConfig } from '@owdproject/nuxt'
 
 export default defineDesktopConfig({
-  theme: '@owdproject/theme-nuxt-nova',
-  apps: ['@owdproject/app-nuxt-classic-audioplayer'],
-  modules: ['@owdproject/module-nuxt-fs', '@owdproject/module-nuxt-pinia-persistence'],
+  theme: '@owdproject/nuxt-theme-nova',
+  apps: ['@owdproject/nuxt-app-classic-audioplayer'],
+  modules: ['@owdproject/nuxt-module-fs', '@owdproject/nuxt-module-pinia-persistence'],
   systemBar: { enabled: true, startButton: true },
   about: {
     title: 'Audio Player (playground)',
     subtitle: 'app-classic-audioplayer · theme-nova',
-    href: 'https://github.com/owdproject/app-classic-audioplayer',
+    href: 'https://github.com/owdproject/nuxt-app-classic-audioplayer',
     versionText: 'Nuxt Desktop',
     icons: [
       {

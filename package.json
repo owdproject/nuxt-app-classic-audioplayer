@@ -50,7 +50,7 @@
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.4.6",
     "@owdproject/core": "^4.0.0-alpha.3",
-    "@owdproject/nuxt-theme-nova": "^4.0.0-alpha.3",
+    "@owdproject/nuxt-theme-paper": "^4.0.0-alpha.3",
     "nuxt": "^4.4.6",
     "typescript": "~6.0.3",
     "@owdproject/nuxt-module-pinia-persistence": "^4.0.0-alpha.3"

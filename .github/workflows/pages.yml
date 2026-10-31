@@ -19,47 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout OWD client (workspace deps)
-        uses: actions/checkout@v4
-        with:
-          repository: owdproject/nuxt-desktop
-          path: client
-          submodules: recursive
-
-      - name: Checkout @owdproject/nuxt
-        uses: actions/checkout@v4
-        with:
-          repository: owdproject/nuxt
-          path: client/packages/nuxt
-
-      - name: Checkout kit-nuxt-tailwind
-        uses: actions/checkout@v4
-        with:
-          repository: owdproject/nuxt-kit-tailwind
-          path: client/packages/owd-kit-nuxt-tailwind
-
-      - name: Checkout kit-nuxt-primevue
-        uses: actions/checkout@v4
-        with:
-          repository: owdproject/nuxt-kit-primevue
-          path: client/packages/owd-kit-nuxt-primevue
-
-      - name: Checkout module-fs
-        uses: actions/checkout@v4
-        with:
-          repository: owdproject/nuxt-module-fs
-          path: client/packages/owd-module-fs
-
-      - name: Checkout theme-paper
-        uses: actions/checkout@v4
-        with:
-          repository: owdproject/nuxt-theme-paper
-          path: client/themes/owd-nuxt-theme-paper
-
-      - name: Overlay this app-classic-audioplayer repo
-        uses: actions/checkout@v4
-        with:
-          path: client/apps/app-classic-audioplayer
+      - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
@@ -67,24 +27,21 @@ jobs:
 
       - run: npm i -g --force corepack@latest && corepack enable
 
-      - name: Install monorepo dependencies
-        working-directory: client
+      - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: Prepare module and playground
-        working-directory: client/apps/app-classic-audioplayer
         run: pnpm run dev:prepare
 
       - name: Generate static playground
-        working-directory: client/apps/app-classic-audioplayer
         run: pnpm run dev:generate
         env:
-          NUXT_APP_BASE_URL: /app-classic-audioplayer/
+          NUXT_APP_BASE_URL: /nuxt-app-classic-audioplayer/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: client/apps/app-classic-audioplayer/playground/.output/public
+          path: playground/.output/public
 
   deploy:
     needs: build
